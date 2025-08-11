@@ -1,0 +1,2 @@
+Create-Custom-RBAC-Role/images/permission-error.png
+Create-Custom-RBAC-Role/images/vm-start-stop.png
