@@ -8,6 +8,8 @@
     "Microsoft.Compute/virtualMachines/deallocate/action",
     "Microsoft.Compute/virtualMachines/restart/action"
   ],
-  "NotActions": [],
+  "NotActions": [
+    "Microsoft.Compute/virtualMachines/delete/action"
+  ],
   "AssignableScopes": ["/subscriptions/<8544ad7e-b415-4aa9-9a13-e91359c79aef>"]
 }
