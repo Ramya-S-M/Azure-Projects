@@ -9,9 +9,16 @@
     "Microsoft.Compute/virtualMachines/restart/action"
   ],
   "NotActions": [
+<<<<<<< HEAD
     "Microsoft.Compute/virtualMachines/delete"
   ],
   "AssignableScopes": [
     "/subscriptions/{subscription-id}"
   ]
 }
+=======
+    "Microsoft.Compute/virtualMachines/delete/action"
+  ],
+  "AssignableScopes": ["/subscriptions/<8544ad7e-b415-4aa9-9a13-e91359c79aef>"]
+}
+>>>>>>> 9c915c182ddbf6a91b96259bd0411a78d6d384ba
