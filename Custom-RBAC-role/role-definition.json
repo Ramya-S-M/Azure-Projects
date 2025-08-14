@@ -1,13 +1,17 @@
-{
-  "Name": "VM Reader + Start/Stop",
+
+  {
+  "Name": "VM Start Stop Operator - No Delete",
   "IsCustom": true,
-  "Description": "Can start and stop a VM but cannot delete.",
+  "Description": "Can start and stop VM but cannot delete it",
   "Actions": [
     "Microsoft.Compute/virtualMachines/start/action",
-    "Microsoft.Compute/virtualMachines/powerOff/action",
     "Microsoft.Compute/virtualMachines/deallocate/action",
     "Microsoft.Compute/virtualMachines/restart/action"
   ],
-  "NotActions": [],
-  "AssignableScopes": ["/subscriptions/<8544ad7e-b415-4aa9-9a13-e91359c79aef>"]
+  "NotActions": [
+    "Microsoft.Compute/virtualMachines/delete"
+  ],
+  "AssignableScopes": [
+    "/subscriptions/{subscription-id}"
+  ]
 }
