@@ -33,7 +33,7 @@ It supports various languages including Python, and integrates with Managed Iden
 - Deploy the Flask app code using Azure CLI, VS Code, or GitHub Actions.  
   
 
-![Creation of WebApp](https://github.com/Ramya-S-M/Azure-Projects/blob/68c9027472beff4d76d1c98aa3a9b6899a5dfaae/Managed-Identity-App/images/Web-app-output.png)
+![Creation of WebApp](https://github.com/Ramya-S-M/Azure-Projects/blob/68c9027472beff4d76d1c98aa3a9b6899a5dfaae/Managed-Identity-App/images/webapp.png)
 
 ### 3️. Enable System Assigned Managed Identity  
 - **What is a Managed Identity?**  
