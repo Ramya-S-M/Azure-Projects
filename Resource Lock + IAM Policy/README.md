@@ -46,7 +46,7 @@ By combining **Resource Locks** and **IAM Policies**, we can:
 - Try deleting the **Storage Account** → It should fail because of the lock.  
 - Try accessing blobs without the right role → You should see **Access Denied**.  
 
-![Test IAM Lock]([images/test-lock.png](https://github.com/Ramya-S-M/Azure-Projects/blob/09adfe465354821440ecd8f604c38c9de7c97fe0/Resource%20Lock%20%2B%20IAM%20Policy/Test%20User.png))  
+![Test IAM Lock](https://github.com/Ramya-S-M/Azure-Projects/blob/09adfe465354821440ecd8f604c38c9de7c97fe0/Resource%20Lock%20%2B%20IAM%20Policy/Test%20User.png)
 
 ---
 
