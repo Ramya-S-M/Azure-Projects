@@ -21,7 +21,7 @@ By combining **Resource Locks** and **IAM Policies**, we can:
 - In Azure Portal, create a **Resource Group**.  
 - Inside the Resource Group, create a **Storage Account**.  
 
-![Create Storage Account](images/create-storage-account.png)  
+![Create Storage Account](https://github.com/Ramya-S-M/Azure-Projects/blob/09adfe465354821440ecd8f604c38c9de7c97fe0/Resource%20Lock%20%2B%20IAM%20Policy/Storage%20Account.png)  
 
 ---
 
@@ -29,7 +29,7 @@ By combining **Resource Locks** and **IAM Policies**, we can:
 - Navigate to the **Storage Account → Locks**.  
 - Add a **Read-Only** or **Delete** lock.  
 
-![Apply Resource Lock](images/resource-lock.png)  
+![Apply Resource Lock](https://github.com/Ramya-S-M/Azure-Projects/blob/09adfe465354821440ecd8f604c38c9de7c97fe0/Resource%20Lock%20%2B%20IAM%20Policy/Resource%20Lock.png)  
 
 ---
 
@@ -38,7 +38,7 @@ By combining **Resource Locks** and **IAM Policies**, we can:
 - Add role assignment (e.g., *Reader*, *Contributor*, *Storage Blob Data Reader*).  
 - Assign to a **user/group/service principal**.  
 
-![Assign IAM Role](images/iam-role.png)  
+![Assign IAM Role](https://github.com/Ramya-S-M/Azure-Projects/blob/09adfe465354821440ecd8f604c38c9de7c97fe0/Resource%20Lock%20%2B%20IAM%20Policy/IAM%20roles.png)  
 
 ---
 
@@ -46,7 +46,7 @@ By combining **Resource Locks** and **IAM Policies**, we can:
 - Try deleting the **Storage Account** → It should fail because of the lock.  
 - Try accessing blobs without the right role → You should see **Access Denied**.  
 
-![Test IAM Lock](images/test-lock.png)  
+![Test IAM Lock]([images/test-lock.png](https://github.com/Ramya-S-M/Azure-Projects/blob/09adfe465354821440ecd8f604c38c9de7c97fe0/Resource%20Lock%20%2B%20IAM%20Policy/Test%20User.png))  
 
 ---
 
