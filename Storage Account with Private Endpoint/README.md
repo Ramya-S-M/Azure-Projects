@@ -8,7 +8,7 @@ The architecture consists of:
 - **Private DNS Zone** to ensure proper name resolution for the storage account.  
 - **Virtual Machine (VM)** inside the same VNet for testing secure access.  
 
-![Architecture Diagram](images/storage-architecture.png)
+![Architecture Diagram](https://github.com/Ramya-S-M/Azure-Projects/blob/690fbb40ff4466b9faec4f755b8eee81374f73be/Storage%20Account%20with%20Private%20Endpoint/storage%20account%20private%20endpoint.png)
 
 ---
 
@@ -23,7 +23,7 @@ It allows secure communication between Azure resources.
 - Create a new VNet with at least one Subnet.  
 - This subnet will host the VM and the Private Endpoint.  
 
-![VNet Creation](images/vnet-creation.png)
+![VNet Creation](https://github.com/Ramya-S-M/Azure-Projects/blob/690fbb40ff4466b9faec4f755b8eee81374f73be/Storage%20Account%20with%20Private%20Endpoint/Vnet.png)
 
 ---
 
@@ -38,7 +38,7 @@ By default, storage accounts can be accessed publicly, but we disable that and u
 - Set **Public Network Access = Disabled**.
 
 
-![Storage Account Creation](images/storage-creation.png)
+![Storage Account Creation](https://github.com/Ramya-S-M/Azure-Projects/blob/690fbb40ff4466b9faec4f755b8eee81374f73be/Storage%20Account%20with%20Private%20Endpoint/Storage-Account.png)
 
 ---
 
@@ -51,7 +51,7 @@ A Private Endpoint assigns a private IP to your resource, ensuring it is accessi
 - Create a new Private Endpoint for **Blob service**.  
 - Attach it to the VNet + Subnet.  
 
-![Private Endpoint Creation](images/private-endpoint.png)
+![Private Endpoint Creation](https://github.com/Ramya-S-M/Azure-Projects/blob/690fbb40ff4466b9faec4f755b8eee81374f73be/Storage%20Account%20with%20Private%20Endpoint/Private-Endpoint.png)
 
 ---
 
@@ -63,14 +63,10 @@ We deploy a VM inside the same VNet to test secure connectivity to the Storage A
 - Create a Windows or Linux VM inside the same VNet.  
 - Use this VM to run validation commands.  
 
-![VM Creation](images/vm-creation.png)
+![VM Creation](https://github.com/Ramya-S-M/Azure-Projects/blob/690fbb40ff4466b9faec4f755b8eee81374f73be/Storage%20Account%20with%20Private%20Endpoint/Virtual-Machine.png)
 
 ---
 
 ### Step 6: Verification
-**How to check if it works?**  
-Run the following commands from inside the VM:  
 
-#### On Windows VM:
-
-nslookup <yourstorageaccount>.blob.core.windows.net
+![Output](https://github.com/Ramya-S-M/Azure-Projects/blob/690fbb40ff4466b9faec4f755b8eee81374f73be/Storage%20Account%20with%20Private%20Endpoint/SSH-Output.png)
