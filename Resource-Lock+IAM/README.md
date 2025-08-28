@@ -49,8 +49,3 @@ By combining **Resource Locks** and **IAM Policies**, we can:
 ![Test IAM Lock](https://github.com/Ramya-S-M/Azure-Projects/blob/09adfe465354821440ecd8f604c38c9de7c97fe0/Resource%20Lock%20%2B%20IAM%20Policy/Test%20User.png)
 
 ---
-
-## Final Outcome  
-- **Resource Lock** prevents accidental deletion/modification.  
-- **IAM Roles** ensure only authorized users can perform specific actions.  
-- Together, they provide strong **security + governance** in Azure.  
