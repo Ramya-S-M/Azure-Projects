@@ -136,13 +136,10 @@ User → Application Gateway (WAF) → Load Balancer → Web Tier → App Tier �
 \- No direct internet access to backend tiers
 
 
-
 \---
 
 
-
 **## 📂 Project Structure**
-
 
 
 Azure-3-Tier-Architecture
@@ -151,27 +148,17 @@ Azure-3-Tier-Architecture
 
 └── 3-tier-screenshots
 
-
-
 \---
-
-
 
 **## 📸 Output**
 
 
-
-!\[Final Output]<img src="./3-tier-screenshots/Output-image.png" width="900"/>
-
-
+!\[Final Output]<img src="./3-tier-screenshots/output-image.png" width="900"/>
 
 \---
 
 
-
 **## 📸 Screenshots**
-
-
 
 All deployment screenshots are available inside:
 
