@@ -44,7 +44,7 @@ This design improves \*\*scalability, security, and maintainability\*\*.
 
 
 
-!\[Architecture Diagram](Azure-3-Tier-Architecture/3-tier-screenshots/3-tier-architecture.png)
+!\[Architecture Diagram](https://github.com/Ramya-S-M/Azure-Projects/blob/ca3279b47bf7cfed1a51d1ba398095184fcc8f6f/Azure-3-Tier-Architecture/3-tier-screenshots/3-tier-architecture.png)
 
 \---
 
@@ -173,8 +173,4 @@ Azure-3-Tier-Architecture
 
 
 All deployment screenshots are available inside:
-
-
-
-
 
