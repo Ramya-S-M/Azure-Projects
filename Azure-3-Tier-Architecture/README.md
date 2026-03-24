@@ -44,7 +44,7 @@ This design improves \*\*scalability, security, and maintainability\*\*.
 
 
 
-!\[Architecture Diagram](3-tier-screenshots/3-tier-architecture.png)
+!\[Architecture Diagram]<img src="./3-tier-screenshots/3-tier-architecture.png" width="900"/>
 
 
 
