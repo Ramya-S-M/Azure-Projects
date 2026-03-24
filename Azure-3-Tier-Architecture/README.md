@@ -18,17 +18,33 @@ A 3-tier architecture divides the application into three layers:
 
 
 
-1\. \*\*Web Tier (Presentation Layer)\*\*
+The goal was to build a system where each layer is decoupled and secured.
 
-2\. \*\*App Tier (Business Logic Layer)\*\*
 
-3\. \*\*Data Tier (Database Layer)\*\*
+
+**Web Tier**: An Azure Application Gateway serves as the entry point, routing traffic to a Virtual Machine Scale Set (VMSS).
+
+
+
+**App Tier**: An Internal Load Balancer manages traffic between the Web and App layers, keeping the business logic private.
+
+
+
+**Data Tier**: An Azure Database for MySQL configured with a Private Endpoint, ensuring the database is never exposed to the public internet.
 
 
 
 This design improves \*\*scalability, security, and maintainability\*\*.
 
 
+
+
+
+**## 🏗️ Architecture**
+
+
+
+!\[Architecture Diagram](Azure-3-Tier-Architecture/3-tier-screenshots/3-tier-architecture.png)
 
 \---
 
@@ -37,6 +53,8 @@ This design improves \*\*scalability, security, and maintainability\*\*.
 **## 🏗️ Architecture Flow**
 
 
+
+User → Application Gateway (WAF) → Load Balancer → Web Tier → App Tier → Database Tier (Private Endpoint)
 
 \---
 
@@ -138,11 +156,25 @@ Azure-3-Tier-Architecture
 
 
 
+**## 📸 Output**
+
+
+
+!\[Output-image](Azure-3-Tier-Architecture/3-tier-screenshots/output-image.png)
+
+
+
+\---
+
+
+
 **## 📸 Screenshots**
 
 
 
 All deployment screenshots are available inside:
+
+
 
 
 
