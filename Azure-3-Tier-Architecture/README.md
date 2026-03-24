@@ -1,5 +1,5 @@
 **# 🚀 Azure 3-Tier Architecture**
-
+<h1 align="center" style="font-size: 50px;">🚀 Azure 3-Tier Architecture</h1>
 
 
 This project demonstrates a \*\*traditional 3-tier architecture deployed in Microsoft Azure\*\* using Virtual Machines, Load Balancer, and Private Endpoint.
