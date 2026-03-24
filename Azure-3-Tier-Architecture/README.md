@@ -162,3 +162,5 @@ Azure-3-Tier-Architecture
 
 All deployment screenshots are available inside:
 
+
+## Here I thank Nishant Singh https://github.com/thakurnishu for his https://nishantsingh.hashnode.dev/10weeksofcloudops-secondweek which made this project possible and understanding.
