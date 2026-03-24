@@ -1,4 +1,3 @@
-**# 🚀 Azure 3-Tier Architecture**
 <h1 align="center" style="font-size: 50px;">🚀 Azure 3-Tier Architecture</h1>
 
 
@@ -162,7 +161,7 @@ Azure-3-Tier-Architecture
 
 
 
-!\[Output-image](Azure-3-Tier-Architecture/3-tier-screenshots/output-image.png)
+!\[Final Output]<img src="./3-tier-screenshots/Output-image.png" width="900"/>
 
 
 
