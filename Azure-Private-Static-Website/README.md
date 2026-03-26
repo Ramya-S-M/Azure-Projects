@@ -1,4 +1,4 @@
-<h1 style="font-size: 50px;">🚀 Azure 3-Tier Architecture</h1>
+<h1 style="font-size: 50px;">🚀 Azure Private Static Website</h1>
 
 
 \## 📌 **Overview**
