@@ -1,5 +1,4 @@
-\# 🚀 **Azure Private Static Website Hosting**
-
+<h1 style="font-size: 50px;">🚀 Azure 3-Tier Architecture</h1>
 
 
 \## 📌 **Overview**
