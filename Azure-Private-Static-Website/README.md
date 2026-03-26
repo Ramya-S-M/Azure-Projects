@@ -69,17 +69,22 @@ VM → Private Endpoint (blob) → Storage Account ($web container)
 
 
 \* Azure Storage Account (Static Website)
+![Storage account]<img src="./screenshots/Storage Account.png" width="900"/>
 
 \* Azure Private Endpoint (web \& blob)
+![Private Endpoint]<img src="./screenshots/PrivateEndpoint-Blob.png" width="900"/>
+![Private Endpoint]<img src="./screenshots/PrivateEndpoint-Web.png" width="900"/>
 
 \* Azure Private DNS Zone
 
 \* Azure Virtual Network
+![Virtual Network]<img src="./screenshots/Virtual Network.png" width="900"/>
 
 \* Azure Bastion
+![Bastion]<img src="./screenshots/Bastion.png" width="900"/>
 
 \* Virtual Machine (Windows/Linux)
-
+![Virtual machine]<img src="./screenshots/VM.png" width="900"/>
 
 
 \---
@@ -93,7 +98,6 @@ VM → Private Endpoint (blob) → Storage Account ($web container)
 \### **1. Storage Setup**
 
 
-
 \* Created Storage Account
 
 \* Enabled Static Website
@@ -102,12 +106,7 @@ VM → Private Endpoint (blob) → Storage Account ($web container)
 
 
 
-`
-
-
-
 \### **2. Secure the Website**
-
 
 
 \* Disabled public access
@@ -116,12 +115,7 @@ VM → Private Endpoint (blob) → Storage Account ($web container)
 
 
 
-
-
-
-
 \### **3. Configure DNS**
-
 
 
 \* Created private DNS zone:
@@ -134,8 +128,6 @@ VM → Private Endpoint (blob) → Storage Account ($web container)
 
 \### **4. Private Access Setup**
 
-
-
 \* Created VM inside VNet
 
 \* Connected using Azure Bastion
@@ -144,12 +136,9 @@ VM → Private Endpoint (blob) → Storage Account ($web container)
 
 \### **5. Upload from Private VM**
 
-
-
 \* Created Private Endpoint (blob)
 
 \* Uploaded file using Azure CLI:
-
 
 
 ```
@@ -158,14 +147,10 @@ VM → Private Endpoint (blob) → Storage Account ($web container)
 
 ```
 
-
-
 \---
 
 
-
 \## 🧪 **Validation**
-
 
 
 \* `nslookup` resolves to private IP (10.x.x.x)
@@ -175,31 +160,10 @@ VM → Private Endpoint (blob) → Storage Account ($web container)
 \* Public access blocked
 
 
-
 \---
-
-
-
-\## 🚨 Challenges Faced
-
-
-
-\* Incorrect Private Endpoint (blob vs web)
-
-\* DNS resolution issues (NXDOMAIN)
-
-\* Bastion connection issues (NSG rules)
-
-\* Upload failures (authentication and networking)
-
-
-
-\---
-
 
 
 \## 🎯 **Key Learnings**
-
 
 
 \* Static websites are public by default
@@ -212,15 +176,10 @@ VM → Private Endpoint (blob) → Storage Account ($web container)
 
 \* Networking mistakes can break connectivity
 
-
-
 \---
 
 
-
 \## 🚀 **Outcome**
-
-
 
 \* Website hosted securely in Azure
 
@@ -229,4 +188,6 @@ VM → Private Endpoint (blob) → Storage Account ($web container)
 \* Accessible only via private network
 
 \* Real-world enterprise architecture implemented
+
+![Output]<img src="./screenshots/Web-Output.png" width="900"/>
 
