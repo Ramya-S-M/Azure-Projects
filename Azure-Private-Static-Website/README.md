@@ -40,7 +40,7 @@ Think of this like a \*\*gated community website\*\*:
 
 
 
-
+![Architecture]<img src="./screenshots/Architecture.png" width="900"/>
 
 
 
