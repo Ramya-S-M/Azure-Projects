@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Azure Real-Time Dashboard</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/7.0.5/signalr.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 40px;
+        }
+
+        .card {
+            width: 420px;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #0078D4;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 12px 0;
+        }
+
+        .value {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .status {
+            margin-top: 20px;
+            color: green;
+            font-weight: bold;
+        }
+
+        .error {
+            margin-top: 20px;
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Real-Time IoT Dashboard</h2>
+        <p>Device ID: <span id="deviceId" class="value">-</span></p>
+        <p>Temperature: <span id="temperature" class="value">-</span> °C</p>
+        <p>Humidity: <span id="humidity" class="value">-</span> %</p>
+        <p>Timestamp: <span id="timestamp" class="value">-</span></p>
+        <div id="status" class="status">Connecting...</div>
+    </div>
+
+    <script>
+        async function start() {
+            try {
+                const negotiateUrl = "https://func-temp-demo.azurewebsites.net/api/HttpTrigger1";
+
+                const response = await fetch(negotiateUrl);
+                const data = await response.json();
+
+                const connection = new signalR.HubConnectionBuilder()
+                    .withUrl(data.url, {
+                        accessTokenFactory: () => data.accessToken
+                    })
+                    .build();
+
+                connection.on("newTemperature", function (message) {
+                    console.log("Received:", message);
+
+                    document.getElementById("deviceId").innerText = message.deviceId || "-";
+                    document.getElementById("temperature").innerText = message.temperature || "-";
+                    document.getElementById("humidity").innerText = message.humidity || "-";
+                    document.getElementById("timestamp").innerText = message.timestamp || "-";
+                });
+
+                await connection.start();
+                document.getElementById("status").innerText = "Connected to Azure SignalR";
+            } catch (error) {
+                console.error(error);
+                document.getElementById("status").innerText = "Connection failed";
+                document.getElementById("status").className = "error";
+            }
+        }
+
+        start();
+    </script>
+</body>
+</html>
