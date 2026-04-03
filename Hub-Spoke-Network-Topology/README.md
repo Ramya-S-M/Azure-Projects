@@ -38,7 +38,7 @@ This architecture consists of:
 
 
 
-<img src="./Hub-Spoke-Network-Topology/Hub-Spoke-Architecture.png" width="900"/>
+![Hub-Spoke-Architecture]<img src="./Hub-Spoke-Network-Topology/Hub-Spoke-Architecture.png" width="900"/>
 
 
 
