@@ -22,7 +22,7 @@ This architecture consists of:
 
 🧱 Architecture Diagram
 
-![Hub-Spoke-Architecture]<img src="./Hub-Spoke-Network-Topology/Hub-Spoke-Architecture.png" width="900"/>
+![Azure Hub-Spoke Architecture](./Hub-Spoke-Architecture.png)
 
 \---
 
