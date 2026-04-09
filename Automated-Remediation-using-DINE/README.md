@@ -17,23 +17,7 @@ When a Storage Account is created with `supportsHttpsTrafficOnly = false` (HTTPS
 🏗️ Architecture Flow
 
 ```
-Azure Policy Definition (JSON)
-        ↓ DeployIfNotExists Rule
-Policy Assignment
-        ↓
-Managed Identity (System-assigned)
-        ↓ Storage Account Contributor Role
-Role Assignment (Subscription level)
-        ↓
-Storage Account (HTTP = FALSE ❌) — Non-compliant detected
-        ↓ Triggers Policy Engine
-Remediation Task
-        ↓
-ARM Template deploys fix
-        ↓
-Storage Account (HTTP = TRUE ✅)
-        ↓
-Policy → COMPLIANT ✅
+![Flow Diagram](./Flow Diagram.png)
 ```
 ---
 
