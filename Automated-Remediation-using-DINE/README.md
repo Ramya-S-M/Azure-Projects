@@ -17,7 +17,7 @@ When a Storage Account is created with `supportsHttpsTrafficOnly = false` (HTTPS
 🏗️ Architecture Flow
 
 ```
-![Flow Diagram]<img src="./Automated-Remediation-using-DINE/Flow Diagram.png" width="900"/>
+![Flow Diagram]<img src="./Flow%20Diagram.png" width="800"/>
 ```
 ---
 
