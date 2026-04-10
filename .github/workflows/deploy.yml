@@ -5,7 +5,7 @@ on:
     branches: [ main ]
 
 env:
-  AZURE_WEBAPP_NAME: myapp-ramya  ← change this
+  AZURE_WEBAPP_NAME: myapp-ramya
   NODE_VERSION: '20.x'
 
 jobs:
