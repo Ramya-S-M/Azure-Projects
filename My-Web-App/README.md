@@ -32,7 +32,7 @@ Azure App Service — Production
 
 
 
-!\[Architecture Diagram](Architecture-CiCd.png)
+!\[Architecture Diagram](./Architecture-CiCd.png)
 
 
 
