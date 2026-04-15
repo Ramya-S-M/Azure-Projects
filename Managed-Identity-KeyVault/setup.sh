@@ -1,4 +1,4 @@
-az login --tenant 93eb4409-6c3f-49b8-84c8-5f3272e45e59 --use-device-code
+az login --use-device-code
 
 
 RG="RG-Secure-Identity"
