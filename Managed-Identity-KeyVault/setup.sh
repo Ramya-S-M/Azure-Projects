@@ -25,11 +25,11 @@ KV_SCOPE=$(az keyvault show --name $KV --query id -o tsv)
 az role assignment create --role "Key Vault Secrets User" --assignee-object-id $MSI_ID --assignee-principal-type ServicePrincipal --scope $KV_SCOPE
 
 echo "Securing the Secret..."
-az keyvault secret set --vaultname $KV --name "DbPassword" --value "MyGrandSecret123!"
+az keyvault secret set --vault-name $KV --name "DbPassword" --value "MyGrandSecret123!"
 
 SECRET_URI=$(az keyvault secret show --name "DbPassword" --vault-name $KV --query id -o tsv)
 
-az webapp config appsettings set --name $APP --resource-group $RG \ --settings DB_PASSWORD="@Microsoft.KeyVault(SecretUri=$SECRET_URI)"
+az webapp config appsettings set --name $APP --resource-group $RG --settings DB_PASSWORD="@Microsoft.KeyVault(SecretUri=$SECRET_URI)"
 
 echo "Done"
 echo "Resource Group: $RG"
