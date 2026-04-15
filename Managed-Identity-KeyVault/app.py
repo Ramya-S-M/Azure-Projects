@@ -10,6 +10,3 @@ def home():
     <h1>Managed Identity + Key Vault</h1>
     <p><b>Secret from Key Vault:</b> {secret}</p>
     """
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8000)
