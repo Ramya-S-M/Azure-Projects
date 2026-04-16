@@ -2,7 +2,7 @@ az login --use-device-code
 
 
 RESOURCE_GROUP="rg-myapp-cd"
-LOCATION="westeurope"
+LOCATION="eastus2"
 APP_NAME="myapp-ramya"
 KEY_VAULT_NAME="kvapp-web-ramya"
 APP_PLAN="plan-myapp"
