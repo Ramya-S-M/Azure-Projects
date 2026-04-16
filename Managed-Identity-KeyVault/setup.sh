@@ -13,7 +13,7 @@ echo $KEY_VAULT_NAME
 echo "Building infrastructure..."
 az group create --name $RESOURCE_GROUP --location $LOCATION
 az keyvault create --name $KEY_VAULT_NAME --resource-group $RESOURCE_GROUP --enable-rbac-authorization true
-az appservice plan create --name $APP_PLAN --resource-group $RESOURCE_GROUP --sku B2 --is-linux
+az appservice plan create --name $APP_PLAN --resource-group $RESOURCE_GROUP --sku F1 --is-linux
 az webapp create --name $APP_NAME --resource-group $RESOURCE_GROUP --plan $APP_PLAN --runtime "PYTHON:3.11"
 
 echo "Building Managed Identity..."
