@@ -4,7 +4,7 @@ az login --use-device-code
 RESOURCE_GROUP="rg-myapp-cd"
 LOCATION="malaysiawest"
 APP_NAME="myapp-ramya"
-KEY_VAULT_NAME="kvapp-web-ramya"
+KEY_VAULT_NAME="kvapp-webvlt"
 APP_PLAN="plan-myapp"
 
 echo $APP_NAME
