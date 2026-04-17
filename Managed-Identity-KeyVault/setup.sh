@@ -1,3 +1,6 @@
+# Stop or script errors
+set -euo pipefail
+
 # Azure Login
 az login --use-device-code
 
@@ -13,6 +16,7 @@ LOCATION="centralindia"
 APP_NAME="webapp-ramya-kv"
 PLAN_NAME="plan-ramya-kv"
 KEY_VAULT_NAME="kv-ramya-webapp"
+ZIP_FILE="app.zip"
 
 # Verify all the variables which are set
 echo "RG=$RESOURCE_GROUP | APP=$APP_NAME | KV=$KEY_VAULT_NAME"
@@ -26,6 +30,10 @@ az appservice plan create --name $PLAN_NAME --resource-group $RESOURCE_GROUP --s
 # Creating WebApp
 az webapp create --name $APP_NAME --resource-group $RESOURCE_GROUP --plan $PLAN_NAME --runtime "NODE:20-lts"
 
+# Configure Linux Node startup and enable App Service build during zip deploy
+az webapp config set --name $APP_NAME --resource-group $RESOURCE_GROUP --startup-file "npm start"
+az webapp config appsettings set --name $APP_NAME --resource-group $RESOURCE_GROUP --settings SCM_DO_BUILD_DURING_DEPLOYMENT=true
+
 # Creating KeyVault with RBAC enabled
 az keyvault create --name $KEY_VAULT_NAME --resource-group $RESOURCE_GROUP --location $LOCATION --sku standard --enable-rbac-authorization true
 
@@ -36,7 +44,10 @@ MY_USER_ID=$(az ad signed-in-user show --query id --output tsv)
 KV_ID=$(az keyvault show --name $KEY_VAULT_NAME --resource-group $RESOURCE_GROUP --query id --output tsv)
 
 # Granting KeyVault role for Ourselves first
-az role assignment create --assignee $MY_USER_ID --role "Key Vault Administrator" --scope $KV_ID
+az role assignment create --assignee $MY_USER_ID --role "Key Vault Administrator" --scope $KV_ID || echo "Key Vault Administrator role may already exist."
+
+# RBAC role assignment propagation can take a short time.
+sleep 30
 
 # Verify
 echo "MY_USER_ID=$MY_USER_ID"
@@ -58,10 +69,15 @@ APP_IDENTITY=$(az webapp identity show --name $APP_NAME --resource-group $RESOUR
 echo "App identity: $APP_IDENTITY"
 
 # Grant role for WebApp
-az role assignment create --assignee $APP_IDENTITY --role "Key Vault Secrets User" --scope $KV_ID
+az role assignment create --assignee $APP_IDENTITY --role "Key Vault Secrets User" --scope $KV_ID || echo "Key Vault Secrets User role may already exist."
 
 # Add KeyVault reference to App settings
 az webapp config appsettings set --name $APP_NAME --resource-group $RESOURCE_GROUP --settings DB_CONNECTION_STRING="@Microsoft.KeyVault(VaultName=${KEY_VAULT_NAME};SecretName=MyDbConnectionString)" APP_ENV="production" APP_NAME_LABEL="Ramya Key Vault Demo"
+
+# Package and deploy app code
+rm -f "$ZIP_FILE"
+zip -r "$ZIP_FILE" index.js package.json package-lock.json
+az webapp deploy --name $APP_NAME --resource-group $RESOURCE_GROUP --src-path "$ZIP_FILE" --type zip
 
 # Restart WebApp
 az webapp restart --name $APP_NAME --resource-group $RESOURCE_GROUP

@@ -1,12 +1,12 @@
 const http = require('http');
 const port = process.env.PORT || 3000;
- 
-// These come from Azure App Settings
-// DB_CONNECTION_STRING is resolved from Key Vault automatically
+
+// These come from Azure App Settings.
+// DB_CONNECTION_STRING is resolved from Key Vault automatically.
 const dbConn = process.env.DB_CONNECTION_STRING || 'NOT LOADED';
 const appEnv = process.env.APP_ENV || 'unknown';
 const appLabel = process.env.APP_NAME_LABEL || 'My App';
- 
+
 const html = `
 <!DOCTYPE html>
 <html>
@@ -28,7 +28,7 @@ const html = `
 <body>
   <div class="card">
     <h1>Azure Managed Identity + Key Vault Demo</h1>
-    <p>Built by <strong>Ramya</strong> — secrets loaded from Key Vault, zero passwords in code.</p>
+    <p>Built by <strong>Ramya</strong> - secrets loaded from Key Vault, zero passwords in code.</p>
     <div class="row">
       <span class="label">App</span>
       <span class="value">${appLabel}</span>
@@ -41,13 +41,13 @@ const html = `
       <span class="label">Key Vault Secret</span>
       <span class="value">
         <span class="${dbConn !== 'NOT LOADED' ? 'badge green' : 'badge red'}">
-          ${dbConn !== 'NOT LOADED' ? 'LOADED FROM KEY VAULT' : 'NOT LOADED — check setup'}
+          ${dbConn !== 'NOT LOADED' ? 'LOADED FROM KEY VAULT' : 'NOT LOADED - check setup'}
         </span>
       </span>
     </div>
     <div class="row">
       <span class="label">Secret preview</span>
-      <span class="value">${dbConn !== 'NOT LOADED' ? dbConn.substring(0,40)+'...' : 'N/A'}</span>
+      <span class="value">${dbConn !== 'NOT LOADED' ? dbConn.substring(0, 40) + '...' : 'N/A'}</span>
     </div>
     <div class="row">
       <span class="label">Node.js version</span>
@@ -55,12 +55,12 @@ const html = `
     </div>
   </div>
 </body></html>`;
- 
+
 const server = http.createServer((req, res) => {
-  res.writeHead(200, {'Content-Type': 'text/html'});
+  res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
   res.end(html);
 });
- 
+
 server.listen(port, () => {
   console.log(`Server on port ${port}`);
   console.log(`Secret loaded: ${dbConn !== 'NOT LOADED' ? 'YES' : 'NO'}`);
