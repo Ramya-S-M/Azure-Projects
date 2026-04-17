@@ -58,7 +58,7 @@ APP_IDENTITY=$(az webapp identity show --name $APP_NAME --resource-group $RESOUR
 echo "App identity: $APP_IDENTITY"
 
 # Grant role for WebApp
-az role assignment create --assignee $APP_IDENTITY -role "Key Vault Secrets User" --scope $KV_ID
+az role assignment create --assignee $APP_IDENTITY --role "Key Vault Secrets User" --scope $KV_ID
 
 # Add KeyVault reference to App settings
 az webapp config appsettings set --name $APP_NAME --resource-group $RESOURCE_GROUP --settings DB_CONNECTION_STRING="@Microsoft.KeyVault(VaultName=${KEY_VAULT_NAME};SecretName=MyDbConnectionString)" APP_ENV="production" APP_NAME_LABEL="Ramya Key Vault Demo"
