@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-  "start": "node index.js",
-  "test": "echo no tests"
-},
+    "start": "node index.js",
+    "test": "echo no tests"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "archiver": "^7.0.1"
+  }
 }
